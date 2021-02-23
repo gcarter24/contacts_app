@@ -1,9 +1,12 @@
 class Api::ContactsController < ApplicationController
+  def all_contact_info
+    @contact2 = Contact.all
+    render "contact2.json.jb"
+  end
+
   def contact_info
     @contact = Contact.first
-    @contact2 = Contact.second
 
     render "contact.json.jb"
-    #render "contact2.json.jb"
   end
 end
